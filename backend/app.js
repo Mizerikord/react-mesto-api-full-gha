@@ -7,7 +7,6 @@ const auth = require('./middlewares/auth');
 const { errorHandler } = require('./middlewares/errorHandler');
 
 const app = express();
-const { PORT = 3000 } = process.env;
 
 app.use(express.json());
 
@@ -24,9 +23,5 @@ app.use(auth); // Метод используемый для авторизац�
 
 app.use(errors()); // Валидация через Joi
 app.use(errorHandler); // Централизованная обработка ошибок
-
-app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}`);
-});
 
 module.exports = app;
