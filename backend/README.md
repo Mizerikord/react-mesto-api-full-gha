@@ -17,3 +17,7 @@
 
 **Ссылка**
 * [Ссылка на репозиторий(https://github.com/Mizerikord/express-mesto-gha.git)
+* Frontend <http://sss.student.nomoredomains.rocks>
+* Backend <http://api.sss.student.nomoreparties.sbs>
+* IP <51.250.82.201>
+
