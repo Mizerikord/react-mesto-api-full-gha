@@ -1,0 +1,27 @@
+.popup__disable{
+    background-image: url(../../../images/close-icon.svg);
+    background-color: rgba(0, 0, 0, 0);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    right: -40px;
+    top: -41px;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    z-index: 1;
+}
+
+@media screen and (max-width: 912px) {
+    .popup__disable{
+        right: 0;
+        top: -38px;
+        width: 22px;
+        height: 22px;
+    }
+}

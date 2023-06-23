@@ -1,0 +1,7 @@
+.card__name{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 35px;
+    margin: 22px 0 22px 0;
+}

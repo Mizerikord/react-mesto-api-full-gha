@@ -1,0 +1,12 @@
+.form__elem-error{
+    visibility: hidden;
+    color: #FF0000;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 13px;
+    text-align: left;
+    min-height: 26px;
+    margin-top: 5px;
+}

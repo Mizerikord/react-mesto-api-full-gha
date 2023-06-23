@@ -1,0 +1,7 @@
+.profile__autor-editor{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin: 0;
+}

@@ -1,0 +1,29 @@
+.profile__editor{
+    display: inline-block;
+    background-image: url(../../../images/edit-pen.svg);
+    background-color: rgba(0, 0, 0, 0);
+    background-repeat: no-repeat;
+    background-size: 10px;
+    background-position: center;
+    border: 1px solid #FFFFFF;
+    margin-left: 18px;
+    margin-bottom: 9px;
+    width: 24px;
+    height: 24px;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+    cursor: pointer;
+    align-self: flex-end;
+    padding: 0;
+}
+
+
+@media screen and (max-width: 912px) {
+    .profile__editor{
+        background-size: 7.5px;
+        margin-left: 10px;
+        margin-bottom: 6px;
+        width: 18px;
+        height: 18px;
+    }
+}

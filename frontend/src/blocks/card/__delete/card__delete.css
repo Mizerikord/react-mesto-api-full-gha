@@ -1,0 +1,13 @@
+.card__delete{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-image: url(../../../images/basket.svg);
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    min-width: 18px;
+    min-height: 19px;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Место</title>
+</head>
+
+<body class="page">
+    <header class="header">
+        <img src="<%=require('./images/logo.svg')%>" alt="Место" class="header__logo">
+    </header>
+    <main class="main">
+        <section class="profile">
+            <div class="profile__container">
+                <div class="profile__avatar-container">
+                    <img src="#" alt="Ваш аватар" class="profile__avatar">
+                    <button class="profile__avatar-editor"></button>
+                </div>
+                <div class="profile__name-container">
+                    <div class="profile__autor-editor">
+                        <h1 class="profile__name">Жак-Ив Кусто</h1>
+                        <button type="button" class="profile__editor blackout"></button>
+                    </div>
+                    <p class="profile__about">Исследователь океана</p>
+                </div>
+            </div>
+            <button type="button" class="profile__insert blackout" aria-label="Добавить место"></button>
+        </section>
+        <section class="cards" aria-label="Карточки мест">
+            <ul class="cards__list">
+                <template id="card">
+                    <li class="card">
+                        <button type="button" class="card__delete blackout" aria-label="удалить карточку"></button>
+                        <img src="#" alt="Картинка места" class="card__img">
+                        <div class="card__name">
+                            <h2 class="card__title"></h2>
+                            <div class="card__like-container">
+                                <button type="button" class="card__like" aria-label="сохранить"></button>
+                                <div class="card__counter-container">
+                                    <p class="card__like-counter"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </template>
+            </ul>
+        </section>
+    </main>
+    <footer class="footer">
+        <p lang="en" class="footer__copyright">&copy; 2020 Mesto Russia</p>
+    </footer>
+    <section class="popup popup_profile">
+        <div class="popup__container">
+            <button type="button" class="popup__disable blackout" aria-label="закрыть редактор профиля"></button>
+            <h2 class="popup__header" lang="ru">Редактировать профиль</h2>
+            <form action="#" class="form" name="profile" novalidate>
+                <label class="form__box">
+                    <input id="name" class="form__elem form__elem_input_name" type="text" value=""
+                        placeholder="Ваше имя" name="name" minlength="2" maxlength="40" required>
+                    <span class="name-error form__elem-error"></span>
+                </label>
+                <label class="form__box">
+                    <input id="about" class="form__elem form__elem_input_about" type="text" value=""
+                        placeholder="Ваша деятельность" name="about" minlength="2" maxlength="200" required>
+                    <span class="about-error form__elem-error"></span>
+                </label>
+                <input type="submit" data-alter-text="Сохранение..." data-default="Сохранить" value="Сохранить"
+                    class="form__save-button" name="submit-button">
+            </form>
+        </div>
+    </section>
+    <section class="popup popup_insert">
+        <div class="popup__container">
+            <button type="button" class="popup__disable blackout" aria-label="закрыть редактор профиля"></button>
+            <h2 class="popup__header" lang="ru">Новое место</h2>
+            <form action="#" class="form" name="insert" novalidate>
+                <label class="form__box">
+                    <input id="title" class="form__elem form__elem_input_name" type="text" value=""
+                        placeholder="Название" name="name" minlength="2" maxlength="30" required>
+                    <span class="title-error form__elem-error"></span>
+                </label>
+                <label class="form__box">
+                    <input id="url" class="form__elem form__elem_input_about" type="url" value=""
+                        placeholder="Ссылка на картинку" name="link" required>
+                    <span class="url-error form__elem-error"></span>
+                </label>
+                <input type="submit" data-alter-text="Сохранение..." data-default="Создать" value="Создать"
+                    class="form__save-button" name="submit-button" disabled="disabled">
+            </form>
+        </div>
+    </section>
+    <section class="popup popup_cover" aria-label="open image">
+        <div class="popup__cover">
+            <button type="button" class="popup__disable blackout" aria-label="закрыть картинку"></button>
+            <img src="#" alt="Развернутое изображение места" class="popup__cover-img">
+            <p class="popup__text"></p>
+        </div>
+    </section>
+    <section class="popup popup_avatar">
+        <div class="popup__container">
+            <button type="button" class="popup__disable blackout" aria-label="закрыть редактор аватара"></button>
+            <h2 class="popup__header" lang="ru">Обновить аватар</h2>
+            <form action="#" class="form" name="avatar" novalidate>
+                <label class="form__box">
+                    <input id="avatar" class="form__elem form__elem-avatar" type="url" value=""
+                        placeholder="Ссылка на аватар" name="link" required>
+                    <span class="avatar-error form__elem-error"></span>
+                </label>
+                <input type="submit" data-alter-text="Сохранение..." data-default="Сохранить" value="Сохранить"
+                    class="form__save-button" name="submit-button" disabled="disabled">
+            </form>
+        </div>
+    </section>
+    <section class="popup popup_delete-card">
+        <div class="popup__container">
+            <button type="button" class="popup__disable blackout" aria-label="закрыть редактор аватара"></button>
+            <h2 class="popup__header popup__header-delete-card" lang="ru">Вы уверены?</h2>
+            <form action="#" class="form" name="card-delete">
+                <input type="submit" data-alter-text="Удаление..." data-default="Да" value="Да"
+                    class="form__save-button" name="submit-button">
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>

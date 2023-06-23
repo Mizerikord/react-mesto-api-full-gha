@@ -1,0 +1,27 @@
+.header__link {
+    font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 19px;
+    text-align: right;
+    color: #FFFFFF;
+    text-decoration: none;
+    align-self: flex-end;
+    margin-bottom: 0px;
+    transition-duration: 0.5s;
+}
+
+@media screen and (max-width: 912px) {
+    .header__link {
+        margin-right: 27px;
+    }
+}
+
+@media screen and (max-width: 613px) {
+    .header__link {
+        font-size: 14px;
+        line-height: 17px;
+        margin-bottom: 33px;
+    }
+}

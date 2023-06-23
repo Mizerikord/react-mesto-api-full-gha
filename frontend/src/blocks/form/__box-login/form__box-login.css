@@ -1,0 +1,21 @@
+.form__box{
+    max-width: 358px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 36px 0;
+}
+
+.form__box:last-child{
+    margin: 21px 36px 0;
+}
+
+@media screen and (max-width: 912px) {
+    .form__box{
+        max-width: 238px;
+        margin: 66px 22px 0;
+    }
+
+    .form__box:last-child{
+        margin: 22px 22px 0;
+    }
+}
