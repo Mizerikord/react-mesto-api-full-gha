@@ -115,12 +115,12 @@ class Api {
 
 const api = new Api({
     // baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-61',
-    baseUrl: 'http://localhost:3001',
+    baseUrl: 'http://api.sss.student.nomoreparties.sbs',
     headers: {
         'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
         'Content-Type': 'application/json'
     },
-    auth: 'http://localhost:3001'
+    auth: 'http://api.sss.student.nomoreparties.sbs'
     // auth: 'https://auth.nomoreparties.co'
 
 });
