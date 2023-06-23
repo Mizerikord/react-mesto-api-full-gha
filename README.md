@@ -9,8 +9,8 @@
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 51.250.82.201
 
-Frontend https://...
+Frontend http://sss.student.nomoredomains.rocks
 
-Backend https://...
+Backend http://api.sss.student.nomoreparties.sbs
