@@ -11,6 +11,7 @@ const { requestLogger, errorLogger } = require('../middlewares/logger');
 const allowedCors = [
   'http://sss.student.nomoredomains.rocks',
   'https://sss.student.nomoredomains.rocks',
+  '*',
 ];
 
 router.use(requestLogger);
@@ -29,7 +30,7 @@ router.use((req, res, next) => {
       res.header('Access-Control-Allow-Methods', DEFAULT_ALLOWED_METHODS);
       // разрешаем кросс-доменные запросы с присланными заголовками
       res.header('Access-Control-Allow-Headers', requestHeaders);
-      return res.end();
+      res.end();
     }
   }
   next();
