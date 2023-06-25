@@ -114,14 +114,11 @@ class Api {
 }
 
 const api = new Api({
-    // baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-61',
     baseUrl: 'http://api.sss.student.nomoreparties.sbs',
     headers: {
         'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
         'Content-Type': 'application/json'
     },
     auth: 'http://api.sss.student.nomoreparties.sbs'
-    // auth: 'https://auth.nomoreparties.co'
-
 });
 export default api
