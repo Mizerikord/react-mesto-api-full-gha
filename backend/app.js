@@ -29,5 +29,3 @@ app.use(errorHandler); // Централизованная обработка о
 app.listen(PORT, () => {
   console.log(`Приложение работает по порту: ${PORT}`);
 });
-
-// module.exports = app;
