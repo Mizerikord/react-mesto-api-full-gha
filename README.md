@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.82.201
+IP 51.250.82.201
 
 Frontend http://sss.student.nomoredomains.rocks
 
