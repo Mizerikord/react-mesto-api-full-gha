@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const cors = require('cors');
+// const cors = require('cors');
 const usersController = require('../controllers/users');
 const userRouter = require('./users');
 const cardRouter = require('./cards');
@@ -8,32 +8,32 @@ const { validateUser } = require('../middlewares/validate');
 const auth = require('../middlewares/auth');
 const { requestLogger, errorLogger } = require('../middlewares/logger');
 
-// const allowedCors = [
-//   'http://sss.student.nomoredomains.rocks',
-//   'https://sss.student.nomoredomains.rocks',
-// ];
+const allowedCors = [
+  'http://sss.student.nomoredomains.rocks',
+  'https://sss.student.nomoredomains.rocks',
+];
 
 router.use(requestLogger);
 
-router.use(cors());
+// router.use(cors());
 
-// router.use((req, res, next) => {
-//   const { origin } = req.headers;
-//   if (allowedCors.includes(origin)) {
-//     res.header('Access-Control-Allow-Origin', origin);
-//     const { method } = req;
-//     const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
-//     const requestHeaders = req.headers['access-control-request-headers'];
-//     if (method === 'OPTIONS') {
-//       // разрешаем кросс-доменные запросы любых типов (по умолчанию)
-//       res.header('Access-Control-Allow-Methods', DEFAULT_ALLOWED_METHODS);
-//       // разрешаем кросс-доменные запросы с присланными заголовками
-//       res.header('Access-Control-Allow-Headers', requestHeaders);
-//       res.end();
-//     }
-//   }
-//   next();
-// });
+router.use((req, res, next) => {
+  const { origin } = req.headers;
+  if (allowedCors.includes(origin)) {
+    res.header('Access-Control-Allow-Origin', origin);
+    const { method } = req;
+    const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
+    const requestHeaders = req.headers['access-control-request-headers'];
+    if (method === 'OPTIONS') {
+      // разрешаем кросс-доменные запросы любых типов (по умолчанию)
+      res.header('Access-Control-Allow-Methods', DEFAULT_ALLOWED_METHODS);
+      // разрешаем кросс-доменные запросы с присланными заголовками
+      res.header('Access-Control-Allow-Headers', requestHeaders);
+      res.end();
+    }
+  }
+  next();
+});
 
 router.post('/signin', validateUser, usersController.login);
 router.post('/signup', validateUser, usersController.createUser);
