@@ -35,6 +35,12 @@ router.use((req, res, next) => {
   next();
 });
 
+router.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
 router.post('/signin', validateUser, usersController.login);
 router.post('/signup', validateUser, usersController.createUser);
 

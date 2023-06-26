@@ -114,11 +114,11 @@ class Api {
 }
 
 const api = new Api({
-     baseUrl: 'http://api.sss.student.nomoreparties.sbs',
+     baseUrl: 'https://api.sss.student.nomoreparties.sbs',
     headers: {
         'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
         'Content-Type': 'application/json'
     },
-    auth: 'http://api.sss.student.nomoreparties.sbs'
+    auth: 'https://api.sss.student.nomoreparties.sbs'
 });
 export default api
