@@ -5,12 +5,12 @@
   
 Пожалуйста, прикрепите в это описание ссылку на сайт, размещенный на Яндекс.Облаке.
 
-Адрес репозитория: https://github.com/...
+Адрес репозитория: https://github.com/Mizerikord/react-mesto-api-full-gha
 
 ## Ссылки на проект
 
 IP 51.250.82.201
 
-Frontend http://sss.student.nomoredomains.rocks
+Frontend https://sss.student.nomoredomains.rocks
 
-Backend http://api.sss.student.nomoreparties.sbs
+Backend https://api.sss.student.nomoreparties.sbs
