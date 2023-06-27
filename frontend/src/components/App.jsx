@@ -29,6 +29,7 @@ function App() {
   const [userEmail, setUserEmail] = useState([]);
   const [isTokenVerified, setIsTokenVerified] = useState(false);
   const [successRegister, setSuccessRegister] = useState(false);
+  const [successLogin, setSuccessLogin] = useState(false);
 
   const navigate = useNavigate();
 
@@ -181,7 +182,12 @@ function App() {
           api._setToken(userData.token);
           localStorage.setItem('jwt', userData.token);
           setloggedIn(true);
+          setSuccessRegister(false);
+          setSuccessLogin(true);
+          handleInfoTooltip(true);
         } else {
+          setSuccessRegister(false);
+          setSuccessLogin(true);
           setloggedIn(true);
           setUserEmail(userData.data.email);
         }
@@ -189,6 +195,8 @@ function App() {
       .catch((err) => {
         console.log(err);
         setloggedIn(false);
+        handleInfoTooltip(true);
+        setSuccessLogin(false);
       })
   }
 
@@ -198,16 +206,19 @@ function App() {
         if (userData) {
           handleInfoTooltip(true);
           navigate('/signin');
+          setSuccessLogin(false);
           setSuccessRegister(true);
         } else {
-          setloggedIn(false);
-          handleInfoTooltip(false);
+          setSuccessLogin(false);
+          setSuccessRegister(true);
+          setloggedIn(true);
+          handleInfoTooltip(true);
         }
       })
       .catch((err) => {
         console.log(err);
         setloggedIn(false);
-        handleInfoTooltip(false);
+        handleInfoTooltip(true);
       })
   }
 
@@ -268,7 +279,8 @@ function App() {
         <InfoTooltip
           onClose={closeAllPopups}
           isOpen={isInfoTooltipOpen}
-          successRegister={successRegister} />
+          successRegister={successRegister}
+          successLogin={successLogin} />
       </CurrentUserContext.Provider>
     </div>
   );

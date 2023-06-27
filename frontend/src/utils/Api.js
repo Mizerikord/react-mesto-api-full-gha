@@ -6,7 +6,7 @@ class Api {
     }
 
     _setToken(currentToken){
-        this._headers.Authorization = `Bearer ${currentToken}`;
+        this._headers.authorization = `Bearer ${currentToken}`;
     }
 
     _getAnswer(res) {
@@ -21,7 +21,7 @@ class Api {
             method: 'GET',
             headers: this._headers,
         })
-        return user.then(this._getAnswer)
+        return user.then(this._getAnswer);
     }
 
     getInitialCards() {
@@ -121,4 +121,5 @@ const api = new Api({
     },
     auth: 'https://api.sss.student.nomoreparties.sbs'
 });
+
 export default api

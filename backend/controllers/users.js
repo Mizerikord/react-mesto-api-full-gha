@@ -182,19 +182,24 @@ const patchUserAvatar = (req, res, next) => {
 
 const login = (req, res, next) => {
   const { email, password } = req.body;
+  let loginUser = {};
   return UserModel.findOne({ email }).select('+password')
     .then((user) => {
       if (!user) {
         next(new AutorizationError('Неверный логин или пароль'));
         return;
       }
-      if (!bcrypt.compare(password, user.password)) {
+      loginUser = user;
+      // eslint-disable-next-line consistent-return
+      return bcrypt.compare(password, user.password);
+    }).then((check) => {
+      if (!check) {
         next(new AutorizationError('Неверный логин или пароль'));
         return;
       }
       res.status(200).send({
         token: jwt.sign(
-          { _id: user._id },
+          { _id: loginUser._id },
           NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret',
           { expiresIn: '7d' },
         ),
