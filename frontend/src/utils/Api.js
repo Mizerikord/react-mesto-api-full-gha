@@ -6,7 +6,7 @@ class Api {
     }
 
     _setToken(currentToken){
-        this._headers.Authorization = `Bearer ${currentToken}`;
+        this._headers.authorization = `Bearer ${currentToken}`;
     }
 
     _getAnswer(res) {
@@ -116,7 +116,7 @@ class Api {
 const api = new Api({
     baseUrl: 'https://api.sss.student.nomoreparties.sbs',
     headers: {
-        'Authorization': `Bearer ${localStorage.getItem('jwt')}`,
+        'authorization': `Bearer ${localStorage.getItem('jwt')}`,
         'Content-Type': 'application/json'
     },
     auth: 'https://api.sss.student.nomoreparties.sbs'
