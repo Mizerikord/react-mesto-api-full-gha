@@ -6,7 +6,7 @@ class Api {
     }
 
     _setToken(currentToken){
-        this._headers.authorization = `Bearer ${currentToken}`;
+        this._headers.Authorization = `Bearer ${currentToken}`;
     }
 
     _getAnswer(res) {
